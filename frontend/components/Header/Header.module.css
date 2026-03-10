@@ -1,0 +1,167 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  border-bottom-color: #E2E8F0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.logoSol {
+  color: var(--solar-amarillo);
+}
+
+.logoAR {
+  color: var(--solar-azul);
+}
+
+.logoTexto {
+  color: var(--solar-texto);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--solar-gris-oscuro);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radio-sm);
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--solar-azul);
+  background: rgba(30, 58, 95, 0.06);
+}
+
+/* CTA */
+.ctaBtn {
+  flex-shrink: 0;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+
+.hamLine {
+  width: 24px;
+  height: 2px;
+  background: var(--solar-azul);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hamOpen:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.hamOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menú móvil */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem 1.5rem;
+  background: var(--solar-blanco);
+  border-top: 1px solid #E2E8F0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.mobileOpen {
+  max-height: 500px;
+}
+
+.mobileLink {
+  text-decoration: none;
+  color: var(--solar-gris-oscuro);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio-sm);
+  transition: all 0.2s ease;
+}
+
+.mobileLink:hover {
+  color: var(--solar-azul);
+  background: rgba(30, 58, 95, 0.06);
+}
+
+.mobileCta {
+  margin-top: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav,
+  .ctaBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}

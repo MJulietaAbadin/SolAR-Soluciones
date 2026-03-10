@@ -1,65 +1,92 @@
-import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
+import SeccionBeneficios from "@/components/Secciones/SeccionBeneficios";
+import SeccionComoFunciona from "@/components/Secciones/SeccionComoFunciona";
+import SeccionProyectosHome from "@/components/Secciones/SeccionProyectosHome";
+import SeccionCTA from "@/components/Secciones/SeccionCTA";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* ---- HERO ---- */}
+      <section className={styles.hero}>
+        <div className={styles.heroOverlay} />
+        <div className={`container ${styles.heroContent}`}>
+          <div className={styles.heroBadge}>
+            <span>Energía solar en Argentina</span>
+          </div>
+          <h1 className={styles.heroTitulo}>
+            Dejá de pagar luz cara.
+            <br />
+            <span className={styles.heroAmarillo}>Pasate a la energía solar.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className={styles.heroSubtitulo}>
+            Instalamos sistemas fotovoltaicos a medida para hogares y empresas.
+            Ahorrá hasta un 100% en tu factura y generá tu propia energía limpia.
           </p>
+          <div className={styles.heroBotones}>
+            <Link href="/simulador" className="btn btn-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              Simulá tu ahorro gratis
+            </Link>
+            <Link href="/proyectos" className="btn btn-outline">
+              Ver proyectos realizados
+            </Link>
+          </div>
+          <div className={styles.heroStats}>
+            <div className={styles.stat}>
+              <span className={styles.statNum}>+200</span>
+              <span className={styles.statLabel}>Proyectos instalados</span>
+            </div>
+            <div className={styles.statDivider} />
+            <div className={styles.stat}>
+              <span className={styles.statNum}>100%</span>
+              <span className={styles.statLabel}>Ahorro posible</span>
+            </div>
+            <div className={styles.statDivider} />
+            <div className={styles.stat}>
+              <span className={styles.statNum}>5-7</span>
+              <span className={styles.statLabel}>Años retorno inversión</span>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Olas decorativas */}
+        <div className={styles.heroWave}>
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 40L48 45.3C96 50.7 192 61.3 288 61.3C384 61.3 480 50.7 576 45.3C672 40 768 40 864 43.7C960 47.3 1056 54.7 1152 54.7C1248 54.7 1344 47.3 1392 43.7L1440 40V80H1392C1344 80 1248 80 1152 80C1056 80 960 80 864 80C768 80 672 80 576 80C480 80 384 80 288 80C192 80 96 80 48 80H0V40Z" fill="white"/>
+          </svg>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ---- SIMULADOR CTA ---- */}
+      <section className={styles.simuladorCta}>
+        <div className="container">
+          <div className={styles.simuladorCtaCard}>
+            <div className={styles.simuladorCtaTexto}>
+              <h2>¿Cuánto podés ahorrar con solar?</h2>
+              <p>Ingresá tu consumo mensual y descubrí el sistema ideal para tu caso en segundos.</p>
+            </div>
+            <Link href="/simulador" className="btn btn-primary">
+              Calculá ahora →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- BENEFICIOS ---- */}
+      <SeccionBeneficios />
+
+      {/* ---- CÓMO FUNCIONA ---- */}
+      <SeccionComoFunciona />
+
+      {/* ---- PROYECTOS DESTACADOS ---- */}
+      <SeccionProyectosHome />
+
+      {/* ---- CTA FINAL ---- */}
+      <SeccionCTA />
+    </>
   );
 }

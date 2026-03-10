@@ -1,0 +1,318 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #F1F5F9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: var(--solar-azul);
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.25rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.sidebarLogo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio-sm);
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.navActivo {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.sidebarBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebarUser {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebarAvatar {
+  width: 36px;
+  height: 36px;
+  background: var(--solar-amarillo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--solar-azul);
+  flex-shrink: 0;
+}
+
+.sidebarNombre {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: white;
+}
+
+.sidebarRol {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.salirBtn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.6rem;
+  border-radius: var(--radio-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.salirBtn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #FCA5A5;
+}
+
+/* Main */
+.main {
+  margin-left: 240px;
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.headerTitulo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--solar-azul);
+}
+
+.headerSub {
+  color: var(--solar-gris-medio);
+  font-size: 0.9rem;
+}
+
+/* Métricas */
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.metricaCard {
+  background: white;
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.metricaDestacada {
+  border: 2px solid var(--solar-amarillo);
+}
+
+.metricaNum {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--solar-azul);
+}
+
+.metricaDestacada .metricaNum {
+  color: var(--solar-amarillo-oscuro);
+}
+
+.metricaLabel {
+  font-size: 0.8rem;
+  color: var(--solar-gris-medio);
+  margin-top: 0.25rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filtroBtn {
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  border: 2px solid #E2E8F0;
+  background: white;
+  color: var(--solar-gris-oscuro);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filtroBtn:hover {
+  border-color: var(--solar-azul);
+  color: var(--solar-azul);
+}
+
+.filtroActivo {
+  background: var(--solar-azul);
+  border-color: var(--solar-azul);
+  color: white;
+}
+
+/* Tabla */
+.cargando {
+  text-align: center;
+  color: var(--solar-gris-medio);
+  padding: 3rem;
+  background: white;
+  border-radius: var(--radio);
+}
+
+.tablaWrapper {
+  background: white;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla thead tr {
+  background: var(--solar-gris);
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.tabla th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--solar-gris-oscuro);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.tablaFila {
+  border-bottom: 1px solid #F1F5F9;
+  transition: background 0.15s ease;
+}
+
+.tablaFila:hover {
+  background: #F8FAFC;
+}
+
+.tablaFila td {
+  padding: 1rem;
+  vertical-align: middle;
+  font-size: 0.88rem;
+  color: var(--solar-texto);
+}
+
+.tablaVacia {
+  text-align: center;
+  color: var(--solar-gris-medio);
+  padding: 3rem !important;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contactoAvatar {
+  width: 36px;
+  height: 36px;
+  background: rgba(30, 58, 95, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--solar-azul);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.contactoNombre {
+  font-weight: 600;
+  color: var(--solar-azul);
+}
+
+.contactoEmail,
+.contactoTel {
+  font-size: 0.78rem;
+  color: var(--solar-gris-medio);
+}
+
+.sinOpcion {
+  color: var(--solar-gris-medio);
+}
+
+.estadoSelect {
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radio-sm);
+  border: 2px solid;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  font-family: inherit;
+  outline: none;
+}
+
+@media (max-width: 1024px) {
+  .metricas { grid-template-columns: repeat(2, 1fr); }
+}

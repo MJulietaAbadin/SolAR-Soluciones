@@ -1,0 +1,273 @@
+/* ---- Beneficios ---- */
+.beneficios {
+  background: var(--solar-gris);
+}
+
+.badgeCenter {
+  display: block !important;
+  text-align: center;
+  margin: 0 auto 1rem !important;
+  width: fit-content;
+}
+
+.beneficiosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.beneficioCard {
+  padding: 2rem;
+  background: white;
+}
+
+.beneficioIcono {
+  width: 56px;
+  height: 56px;
+  background: rgba(245, 158, 11, 0.12);
+  border-radius: var(--radio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--solar-amarillo-oscuro);
+  margin-bottom: 1.25rem;
+}
+
+.beneficioTitulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--solar-azul);
+  margin-bottom: 0.6rem;
+}
+
+.beneficioDesc {
+  font-size: 0.9rem;
+  color: var(--solar-gris-oscuro);
+  line-height: 1.7;
+}
+
+/* ---- Cómo funciona ---- */
+.comoFunciona {
+  background: var(--solar-azul);
+}
+
+.pasosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.pasoCard {
+  position: relative;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radio);
+  transition: background var(--transicion);
+}
+
+.pasoCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pasoNum {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--solar-amarillo);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pasoTitulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.pasoDesc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+.pasoFlecha {
+  position: absolute;
+  top: 2.5rem;
+  right: -1.25rem;
+  font-size: 1.5rem;
+  color: var(--solar-amarillo);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* ---- Proyectos home ---- */
+.proyectosHome {
+  background: white;
+}
+
+.proyectosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.proyectoCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.proyectoImagen {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.proyectoPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #E2E8F0, #CBD5E1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+}
+
+.proyectoBadgeTipo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.proyectoInfo {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.proyectoTitulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--solar-azul);
+}
+
+.proyectoStats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.proyectoStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.proyectoStatLabel {
+  font-size: 0.75rem;
+  color: var(--solar-gris-medio);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.proyectoStatVal {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--solar-texto);
+}
+
+.proyectoAhorro {
+  color: var(--solar-verde-oscuro);
+}
+
+.proyectoUbicacion {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--solar-gris-medio);
+}
+
+.proyectoUbicacion svg {
+  color: var(--solar-amarillo-oscuro);
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* ---- CTA Final ---- */
+.ctaFinal {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, var(--solar-azul) 0%, #0d2440 100%);
+}
+
+.ctaFinalInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.ctaFinalTexto h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.ctaFinalTexto p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.ctaFinalBotones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .pasosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pasoFlecha {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .beneficiosGrid,
+  .proyectosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pasosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaFinalInner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ctaFinalBotones {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .beneficiosGrid {
+    grid-template-columns: 1fr;
+  }
+}

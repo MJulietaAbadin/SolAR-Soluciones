@@ -1,0 +1,199 @@
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--solar-azul) 0%, #0F2A4A 50%, #1a1f3a 100%);
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--solar-amarillo);
+  padding: 0.4rem 1.25rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.heroTitulo {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--solar-blanco);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  animation: fadeInUp 0.6s ease 0.1s both forwards;
+}
+
+.heroAmarillo {
+  color: var(--solar-amarillo);
+}
+
+.heroSubtitulo {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease 0.2s both forwards;
+}
+
+.heroBotones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+  animation: fadeInUp 0.6s ease 0.3s both forwards;
+}
+
+/* Stats */
+.heroStats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.4s both forwards;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNum {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--solar-amarillo);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Ola */
+.heroWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+}
+
+.heroWave svg {
+  width: 100%;
+}
+
+/* ---- Simulador CTA ---- */
+.simuladorCta {
+  padding: 0 1.5rem;
+  margin-top: -2px;
+}
+
+.simuladorCtaCard {
+  background: var(--solar-amarillo);
+  border-radius: var(--radio-lg);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+  flex-wrap: wrap;
+}
+
+.simuladorCtaTexto h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--solar-azul);
+  margin-bottom: 0.4rem;
+}
+
+.simuladorCtaTexto p {
+  color: rgba(30, 58, 95, 0.75);
+  font-size: 1rem;
+}
+
+.simuladorCtaCard .btn-primary {
+  background: var(--solar-azul);
+  color: var(--solar-blanco);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.simuladorCtaCard .btn-primary:hover {
+  background: var(--solar-azul-medio);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
+}
+
+@media (max-width: 640px) {
+  .simuladorCtaCard {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroStats {
+    gap: 1.25rem;
+  }
+
+  .statDivider {
+    display: none;
+  }
+}

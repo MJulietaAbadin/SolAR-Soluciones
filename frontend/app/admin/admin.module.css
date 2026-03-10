@@ -1,0 +1,63 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--solar-azul) 0%, #0d2440 100%);
+  padding: 1.5rem;
+}
+
+.loginCard {
+  background: white;
+  border-radius: var(--radio-lg);
+  padding: 3rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.loginLogo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+.logoSol { color: var(--solar-amarillo); }
+.logoAR { color: var(--solar-azul); }
+
+.loginTitulo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--solar-azul);
+  margin-bottom: 0.4rem;
+}
+
+.loginSub {
+  color: var(--solar-gris-medio);
+  font-size: 0.88rem;
+  margin-bottom: 2rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.loginBtn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #DC2626;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio-sm);
+  font-size: 0.88rem;
+  text-align: center;
+}

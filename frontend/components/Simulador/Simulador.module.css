@@ -1,0 +1,330 @@
+/* ---- Hero del simulador ---- */
+.hero {
+  background: linear-gradient(135deg, var(--solar-azul) 0%, #0d2440 100%);
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--solar-amarillo);
+  padding: 0.4rem 1.25rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+.heroTitulo {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitulo {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- Sección formulario ---- */
+.formSection {
+  padding: 3rem 1.5rem 4rem;
+  background: var(--solar-gris);
+}
+
+.formCard {
+  background: white;
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-media);
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.formHeader {
+  background: linear-gradient(135deg, var(--solar-azul), #1a3560);
+  padding: 2rem 2.5rem;
+}
+
+.formTitulo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.formSubtitulo {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.form {
+  padding: 2.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formHint {
+  font-size: 0.78rem;
+  color: var(--solar-gris-medio);
+  margin-top: 0.2rem;
+}
+
+.formError {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #DC2626;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio-sm);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.formSubmit {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.05rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(30, 58, 95, 0.3);
+  border-top-color: var(--solar-azul);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+/* ---- Resultados ---- */
+.resultadosSection {
+  padding: 4rem 1.5rem 6rem;
+  background: var(--solar-gris);
+}
+
+.resultados {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.resultadosHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.resultadosTitulo {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--solar-azul);
+  margin-bottom: 0.75rem;
+}
+
+.resultadosTitulo span {
+  color: var(--solar-amarillo-oscuro);
+}
+
+.resultadosSubtitulo {
+  color: var(--solar-gris-oscuro);
+  font-size: 1rem;
+}
+
+/* ---- Tarjetas de opciones ---- */
+.tarjetasGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tarjeta {
+  position: relative;
+  border: 2px solid;
+  border-radius: var(--radio-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.tarjetaDestacada {
+  border-width: 2px;
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.2);
+}
+
+.tarjetaBadgeRecomendado {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--solar-amarillo);
+  color: var(--solar-azul);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.3rem 1.2rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.tarjetaHeader {
+  text-align: center;
+}
+
+.tarjetaPorcentaje {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.tarjetaLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--solar-azul);
+  margin-bottom: 0.4rem;
+}
+
+.tarjetaDescripcion {
+  font-size: 0.85rem;
+  color: var(--solar-gris-oscuro);
+}
+
+/* Ahorro */
+.tarjetaAhorro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem;
+  background: white;
+  border-radius: var(--radio);
+  gap: 0.2rem;
+}
+
+.tarjetaAhorroLabel {
+  font-size: 0.75rem;
+  color: var(--solar-gris-medio);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tarjetaAhorroValor {
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.tarjetaAhorroAnual {
+  font-size: 0.85rem;
+  color: var(--solar-gris-oscuro);
+}
+
+/* Datos técnicos */
+.tarjetaDatos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tarjetaDato {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tarjetaDato:last-child {
+  border-bottom: none;
+}
+
+.tarjetaDatoLabel {
+  font-size: 0.85rem;
+  color: var(--solar-gris-oscuro);
+}
+
+.tarjetaDatoValor {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--solar-texto);
+}
+
+/* Ambiental */
+.tarjetaAmbiental {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tarjetaAmbientalItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--solar-verde-oscuro);
+  background: rgba(16, 185, 129, 0.08);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+}
+
+.tarjetaBtn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* Nota */
+.resultadosNota {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--solar-gris-medio);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .tarjetasGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 1.5rem;
+  }
+
+  .formHeader {
+    padding: 1.5rem;
+  }
+}

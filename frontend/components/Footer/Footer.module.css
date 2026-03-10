@@ -1,0 +1,148 @@
+.footer {
+  background: var(--solar-azul);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 4rem 1.5rem 2rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--solar-blanco);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.logoSol {
+  color: var(--solar-amarillo);
+}
+
+.logoAR {
+  color: var(--solar-amarillo-claro);
+}
+
+.tagline {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.redes {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.red:hover {
+  background: var(--solar-amarillo);
+  color: var(--solar-azul);
+  transform: translateY(-2px);
+}
+
+/* Columnas */
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.colTitulo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--solar-amarillo);
+  margin-bottom: 1.25rem;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.colLinks a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.colLinks a:hover {
+  color: var(--solar-amarillo);
+}
+
+/* Contacto */
+.contactoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.contactoItem svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--solar-amarillo);
+}
+
+/* Bottom */
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lema {
+  color: var(--solar-amarillo);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

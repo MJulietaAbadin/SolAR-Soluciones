@@ -1,0 +1,170 @@
+.hero {
+  background: linear-gradient(135deg, var(--solar-azul) 0%, #0d2440 100%);
+  padding: 8rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--solar-amarillo);
+  padding: 0.4rem 1.25rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+.heroTitulo {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitulo {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.opcionesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.opcionCard {
+  padding: 2rem;
+  position: relative;
+}
+
+.destacado {
+  border: 2px solid var(--solar-amarillo);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15);
+}
+
+.badgeDestacado {
+  position: absolute;
+  top: -14px;
+  left: 2rem;
+  background: var(--solar-amarillo);
+  color: var(--solar-azul);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.3rem 1.2rem;
+  border-radius: 100px;
+}
+
+.opcionIcono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.opcionTitulo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--solar-azul);
+  margin-bottom: 0.75rem;
+}
+
+.opcionDesc {
+  font-size: 0.9rem;
+  color: var(--solar-gris-oscuro);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.opcionItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.opcionItems li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--solar-texto);
+}
+
+/* Fiscal */
+.fiscalSection {
+  background: var(--solar-gris);
+}
+
+.fiscalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.fiscalCard {
+  display: flex;
+  gap: 1.25rem;
+  background: white;
+  padding: 1.75rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  align-items: flex-start;
+}
+
+.fiscalNum {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--solar-amarillo);
+  opacity: 0.5;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.fiscalTitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--solar-azul);
+  margin-bottom: 0.5rem;
+}
+
+.fiscalDesc {
+  font-size: 0.88rem;
+  color: var(--solar-gris-oscuro);
+  line-height: 1.7;
+}
+
+/* CTA */
+.cta {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, var(--solar-azul), #0d2440);
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.ctaInner h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.ctaInner p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .opcionesGrid, .fiscalGrid { grid-template-columns: 1fr; }
+  .ctaInner { flex-direction: column; text-align: center; }
+}

@@ -1,26 +1,263 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta SolAR */
+  --solar-amarillo: #F59E0B;
+  --solar-amarillo-claro: #FCD34D;
+  --solar-amarillo-oscuro: #D97706;
+  --solar-azul: #1E3A5F;
+  --solar-azul-claro: #2563EB;
+  --solar-azul-medio: #1E40AF;
+  --solar-verde: #10B981;
+  --solar-verde-oscuro: #059669;
+  --solar-gris: #F8FAFC;
+  --solar-gris-medio: #94A3B8;
+  --solar-gris-oscuro: #475569;
+  --solar-texto: #0F172A;
+  --solar-blanco: #FFFFFF;
+
+  /* Tipografía */
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+
+  /* Espaciado */
+  --container-max: 1200px;
+  --section-padding: 5rem 1.5rem;
+
+  /* Sombras */
+  --sombra-suave: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --sombra-media: 0 4px 25px rgba(0, 0, 0, 0.12);
+  --sombra-fuerte: 0 8px 40px rgba(0, 0, 0, 0.18);
+
+  /* Bordes */
+  --radio: 12px;
+  --radio-sm: 8px;
+  --radio-lg: 20px;
+
+  /* Transiciones */
+  --transicion: 0.3s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--solar-texto);
+  background: var(--solar-blanco);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Utilidades globales ---- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-titulo {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--solar-azul);
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-subtitulo {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--solar-gris-oscuro);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radio);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transicion);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--solar-amarillo);
+  color: var(--solar-azul);
+}
+
+.btn-primary:hover {
+  background: var(--solar-amarillo-oscuro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.btn-secondary {
+  background: var(--solar-azul);
+  color: var(--solar-blanco);
+}
+
+.btn-secondary:hover {
+  background: var(--solar-azul-medio);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--solar-amarillo);
+  border: 2px solid var(--solar-amarillo);
+}
+
+.btn-outline:hover {
+  background: var(--solar-amarillo);
+  color: var(--solar-azul);
+}
+
+/* ---- Cards ---- */
+.card {
+  background: var(--solar-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+/* ---- Badge ---- */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-amarillo {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--solar-amarillo-oscuro);
+}
+
+.badge-verde {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--solar-verde-oscuro);
+}
+
+/* ---- Formularios ---- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--solar-azul);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #E2E8F0;
+  border-radius: var(--radio-sm);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--solar-texto);
+  background: var(--solar-blanco);
+  transition: border-color var(--transicion);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--solar-amarillo);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--solar-gris);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--solar-gris-medio);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--solar-azul);
+}
+
+/* ---- Animaciones ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ---- Accesibilidad ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
