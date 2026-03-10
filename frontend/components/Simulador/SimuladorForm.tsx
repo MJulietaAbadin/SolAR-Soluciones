@@ -5,7 +5,7 @@ import styles from "./Simulador.module.css";
 import { fetchApi } from "@/lib/api";
 import type { SimulacionResult } from "@/types/simulador";
 
-const TIPOS_PROPIEDAD = ["Casa", "Departamento", "Comercio", "Industria", "Agro", "Otro"];
+const TIPOS_PROPIEDAD = ["Hogar", "Comercio", "Empresa"];
 
 interface Props {
   onResultado: (data: SimulacionResult) => void;
@@ -16,7 +16,7 @@ export default function SimuladorForm({ onResultado }: Props) {
   const [form, setForm] = useState({
     provincia: "",
     consumoMensualKwh: "",
-    tipoPropiedad: "Casa",
+    tipoPropiedad: "Hogar",
     montoFacturaMensual: "",
   });
   const [cargando, setCargando] = useState(false);

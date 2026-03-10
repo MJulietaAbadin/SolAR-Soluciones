@@ -136,7 +136,7 @@ public class SimuladorService : ISimuladorService
     {
         using var conn = new SqlConnection(_connectionString);
         return await conn.QueryAsync<string>(
-            "SELECT Provincia FROM ParametrosSimulador WHERE Activo = 1 ORDER BY Provincia");
+            "SELECT Provincia FROM ParametrosSimulador ORDER BY Provincia");
     }
 
     public async Task<ParametrosSimulador?> GetParametrosByProvinciaAsync(string provincia)
